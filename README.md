@@ -1,2 +1,4 @@
 # not-official-vyos-package-builder
-Package (and ISO) builder for VyOS for dummies
+ 
+- You need a lot of disk space to run this
+- It's tested with rootless `podman` (not `docker`) though `docker` should work ...

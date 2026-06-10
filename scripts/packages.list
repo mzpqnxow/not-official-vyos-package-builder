@@ -1,0 +1,51 @@
+# Curated list of Debian SOURCE packages to build into packages-out/.
+# One source-package name per line. Blank lines and #-comments are ignored.
+#
+# Build the whole list with:   scripts/build-all.sh
+# (which just feeds these names to build-pkg.sh in a single container run).
+#
+# Scope reminder (see CLAUDE.md): this is an on-demand, accumulating set you
+# curate — NOT a full Debian mirror. Keep it to packages you actually want on
+# the router. Each entry also pulls its build-deps as prebuilt .debs; a few
+# names here can still mean a lot of disk, so add deliberately.
+#
+# Tip: building is fault-tolerant — an entry that fails to build is reported and
+# skipped, and the rest of the list still builds and indexes.
+lsof
+forkstat
+fping
+hping3
+sysstat
+tcpdump
+mtr-tiny
+iperf3
+ethtool
+# socat
+ngrep
+traceroute
+tmux
+htop
+screen
+libopencsd1
+linux-perf
+util-linux
+lshw
+parted
+libslang2
+python3-virtualenv
+python3-pip
+iftop
+libhugetlbfs-bin
+libshadowsocks-libev2
+shadowsocks-libev
+microsocks
+proxychains
+tor
+tor-geoipdb
+nyx
+tsocks
+obfs4proxy
+snowflake-proxy
+sshuttle
+libproxychains4
+connect-proxy
