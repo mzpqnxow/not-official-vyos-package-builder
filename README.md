@@ -10,9 +10,12 @@ install` from it.
 
 ## Requirements
 
-- `podman` (tested rootless; `docker` should work with minor tweaks) and `sudo`.
+- `podman` (warning, uses `sudo podman` because of 'reasons'; `docker` should also work with minor tweaks).
+  New to Podman? See [docs/installing-podman-debian-ubuntu.md](docs/installing-podman-debian-ubuntu.md).
 - **Lots of disk.** `./.build-src/` becomes very large during a build, and
-  `packages-out/` grows with every package you add.
+  `packages-out/` grows with every package you add. If you experience failures
+  during package builds, check your disk space with `df -h`, there's a good
+  chance it's a disk space issue - happens to the best of us :>
 - The `vyos-build` repo cloned into `./vyos-build/` (needed for `iso.sh`).
 
 ## Quick start
@@ -73,3 +76,10 @@ sudo apt-get install <pkg>
 
 The bind mount is live: after building more packages, the router only needs
 another `apt-get update` — no server restart.
+
+## Note On Default Packages List
+
+The `scripts/packages.list` file has some weird stuff in it - for example, `tor`, which is probably not
+useful on VyOS. Others that seems unusual may have some use for privacy minded individuals though (e.g.
+`snowflake`, the `shadowsocks`-related packages. Though even those are probably not what you want. So
+be sure to edit `scripts/packages.list` for your own use.
